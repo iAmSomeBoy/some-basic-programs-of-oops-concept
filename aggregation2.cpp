@@ -1,4 +1,4 @@
-// Aggregation Example: Teacher aggregates Students
+// Aggregation Example: Teacher aggregates Students~
 #include <iostream>
 #include <string>
 #include <vector>

@@ -133,4 +133,54 @@ int main(){
     */
 
 
-    
+//##################################################////
+                   //-- aggregation --//
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Student{
+    private:
+    string name;
+
+    public:
+        Student(string sName): name(sName){
+            cout<<"Name Pushed into Student Class"<<endl;
+        }
+
+        string getName(){
+            return name;
+        }
+};
+
+class Classroom{
+    private:
+        string name;
+        vector<Student*>students;
+    public:
+        Classroom(string cName): name(cName){
+            cout<<"Name Pushed into ClassRoom"<<endl;
+        }
+        
+        void addList(Student* viz){
+            students.push_back(viz);
+        }
+
+        void PrintList(){
+            for(auto l : students){
+                cout<<l->getName()<<endl;
+            }
+        }
+};
+
+int main(){
+    Student student1("asdf"), student2("hgfdsa");
+    Classroom math("EDC159");
+    math.addList(&student1);
+    math.addList(&student2);
+
+    math.PrintList();
+
+
+    return 0;
+}

@@ -34,7 +34,7 @@ public:
     }
 };
 
-// Student method to show associated teacher
+// Student method to show as+sociated teacher
 void Student::showTeacher(Teacher &teacher) {
     cout << "Student: " << name << " is taught by Teacher: " << teacher.getName() << endl;
 }

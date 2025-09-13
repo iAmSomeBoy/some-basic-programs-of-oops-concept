@@ -38,7 +38,7 @@ int main() {
     Student student1("Rahul");
     Teacher teacher1("Mr. Sharma");
 
-    // Show association
+    // Show association.
     student1.showTeacher(teacher1);
 
     return 0;

@@ -30,7 +30,7 @@ public:
     // Method showing association with Teacher
     void showTeacher(Teacher &teacher) {
     cout << "Student: " << name << " is taught by Teacher: " << teacher.getName() << endl;
-}
+    }
 };
 
 int main() {

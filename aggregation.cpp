@@ -28,15 +28,10 @@ public:
     }
 
     // Method showing association with Teacher
-    void showTeacher(Teacher &teacher);
-};
-
-// Teacher class
-
-// Student method to show as+sociated teacher
-void Student::showTeacher(Teacher &teacher) {
+    void showTeacher(Teacher &teacher) {
     cout << "Student: " << name << " is taught by Teacher: " << teacher.getName() << endl;
 }
+};
 
 int main() {
     // Create objects of Student and Teacher

@@ -40,6 +40,10 @@ int main(){
     return 0;
 }
 */
+
+
+
+/*
 #include <iostream>
 using namespace std;
 
@@ -74,3 +78,59 @@ int main(){
 
     return 0;
 }
+*/
+
+/*
+#include <bits/stdc++.h>
+using namespace std;
+
+class Student{
+    private:
+        string name;
+    public:
+        Student(string sName): name(sName){}
+
+        string getName(){
+            return name;
+        }
+};
+
+class Classroom{
+    private:
+    string roomNumber;
+    vector<Student*>student;
+
+    public:
+        Classroom(string No): roomNumber(No){}
+
+        void addStudent(Student* add){
+            student.push_back(add);
+        }
+
+        void studentList(){
+            for(auto List:student){
+                cout<< List -> getName()<<endl;
+            }
+        }
+};
+
+int main(){
+    Student student1("ABCD");
+    Student student2("EFGH");
+
+    Classroom math("Math 159");
+    math.addStudent(&student1);
+    math.addStudent(&student2);
+    math.studentList();
+    return 0;
+}*/
+
+/*Classroom mathClass("M101");
+    mathClass.addStudent(&student1);
+    mathClass.addStudent(&student2);
+    
+    mathClass.listStudents();
+    */
+
+
+    

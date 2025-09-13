@@ -1,71 +1,54 @@
-// Aggregation Example: Teacher aggregates Students
 #include <iostream>
 #include <string>
 #include <vector>
 using namespace std;
 
-class Teacher {
-private:
-    string name;
-
-public:
-    Teacher(string teacherName) : name(teacherName) {}
-
-    string getName() {
-        return name;
-    }
-};
-
-
 class Student {
 private:
     string name;
 public:
-    Student(string studentName) : name(studentName) {}
+    Student(string n) : name(n) {
+        cout << "Student " << name << " created" << endl;
+    }
+    ~Student() {
+        cout << "Student " << name << " destroyed" << endl;
+    }
     string getName() const { return name; }
 };
 
-class Teacher {
+class Classroom {
 private:
-    string name;
-    vector<Student*> students; // Aggregation: Teacher has Students, but does not own them
+    string roomNumber;
+    vector<Student*> students;  // Aggregation: Classroom HAS Students (weak ownership)
 public:
-    Teacher(string teacherName) : name(teacherName) {}
-    string getName() const { return name; }
-
-    // Add a student to the teacher's list
+    Classroom(string room) : roomNumber(room) {
+        cout << "Classroom " << roomNumber << " created" << endl;
+    }
+    ~Classroom() {
+        cout << "Classroom " << roomNumber << " destroyed" << endl;
+    }
     void addStudent(Student* student) {
         students.push_back(student);
     }
-
-    // Show all students taught by this teacher
-    void showStudents() const {
-        cout << "Teacher: " << name << " teaches:" << endl;
-        for (const auto& student : students) {
-            cout << "  - " << student->getName() << endl;
+    void listStudents() {
+        cout << "Students in classroom " << roomNumber << ":" << endl;
+        for (auto student : students) {
+            cout << "- " << student->getName() << endl;
         }
     }
 };
 
 int main() {
-    // Create students independently
-    Student student1("Rahul");
-    Student student2("Priya");
-    Student student3("Amit");
-
-    // Create teacher independently
-    Teacher teacher1("Mr. Sharma");
-
-    // Aggregate students to teacher
-    teacher1.addStudent(&student1);
-    teacher1.addStudent(&student2);
-    teacher1.addStudent(&student3);
-
-    // Show aggregation
-    teacher1.showStudents();
-
-    // Students exist independently of teacher
-    cout << "Student: " << student2.getName() << " exists even if teacher is deleted." << endl;
-
+    // Students exist independently
+    Student student1("Alice");
+    Student student2("Bob");
+    
+    Classroom mathClass("M101");
+    mathClass.addStudent(&student1);
+    mathClass.addStudent(&student2);
+    
+    mathClass.listStudents();
+    
+    // Students continue to exist even after classroom is destroyed
     return 0;
 }

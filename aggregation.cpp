@@ -2,8 +2,18 @@
 #include <string>
 using namespace std;
 
-// Forward declaration
-class Teacher;
+class Teacher {
+private:
+    string name;
+
+public:
+    Teacher(string teacherName) : name(teacherName) {}
+
+    string getName() {
+        return name;
+    }
+};
+
 
 // Student class
 class Student {
@@ -22,17 +32,6 @@ public:
 };
 
 // Teacher class
-class Teacher {
-private:
-    string name;
-
-public:
-    Teacher(string teacherName) : name(teacherName) {}
-
-    string getName() {
-        return name;
-    }
-};
 
 // Student method to show as+sociated teacher
 void Student::showTeacher(Teacher &teacher) {

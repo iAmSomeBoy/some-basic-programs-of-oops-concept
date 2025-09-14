@@ -1,0 +1,8 @@
+File handling in C++ is a mechanism to store the output of a program in a file and help perform various operations on it.
+Files help store these data permanently on a storage device.
+
+#include <fstream>
+open() – This is used to create a file.
+read()  – This is used to read the data from the file.
+write() – This is used to write new data to file.
+close() – This is used to close the file.

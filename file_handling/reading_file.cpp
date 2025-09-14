@@ -10,12 +10,8 @@ fstream fileName;
         cout<<"File Reading Failed or File doesn't exits"<<endl;
     }
     else{
-        char x;
-        while(1){
-            fileName>>x;
-            if(fileName.eof()){
-                break;
-            }
+        string x;
+        while(getline(fileName, x)){
             cout<<x;
         }
         fileName.close();
